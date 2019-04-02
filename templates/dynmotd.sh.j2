@@ -1,0 +1,30 @@
+#!/bin/bash
+data=$(hostname -f)
+icon="$(echo "$data" | /usr/bin/identicon)"
+color_fg=$((16#$(echo "$data" | tr -d '\n' | sha256sum | cut -c1-2)))
+color_bg=$(( color_fg + 15 ))
+bg="\033[48;5;${color_bg}m"
+fg="\033[38;5;${color_fg}m"
+clear="\033[0m"
+
+line() {
+	head -n $1 | tail -n 1
+}
+
+
+echo "
+{{ site_ascii_art_1 }} $(line 1 <<< "$icon")
+{{ site_ascii_art_2 }} $(line 2 <<< "$icon")
+{{ site_ascii_art_3 }} $(line 3 <<< "$icon")
+{{ site_ascii_art_4 }} $(line 4 <<< "$icon")
+{{ site_ascii_art_5 }} $(line 5 <<< "$icon")
+==================================================
+ Hostname: $(hostname)
+   Uptime: $(uptime -p)
+  Release: {{ ansible_distribution }} Linux release {{ ansible_distribution_version }} ({{ ansible_distribution_release }})
+     Load: $(cat /proc/loadavg)
+{% for custom_command in dynmotd_custom %}
+{%set spacing = custom_command.name | length%}
+{%for i in range(18 - spacing)%} {% endfor %}{{ custom_command.name }}: $({{ custom_command.command }})
+{% endfor %}
+=================================================="

@@ -1,0 +1,10 @@
+# Used for holding custom commands to run. They should output a single line.
+# dynmotd_custom:
+#   - name: Condor
+#     command: "condor_q -totals | tail -n 1"
+dynmotd_custom: []
+site_ascii_art_1: "  _____     _                _____ _____  "
+site_ascii_art_2: " |   __|___| |___ _ _ _ _   |   __|  |  | "
+site_ascii_art_3: " |  |  | .'| | .'|_'_| | |  |   __|  |  | "
+site_ascii_art_4: " |_____|__,|_|__,|_,_|_  |  |_____|_____| "
+site_ascii_art_5: "                     |___|                "
