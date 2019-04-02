@@ -4,6 +4,8 @@ A dynamic message-of-the-day login prompt. Includes an identicon generated from
 the hostname, which should help prevent accidental reboots of incorrect
 machines.
 
+![](./image.png)
+
 ## Requirements
 
 
