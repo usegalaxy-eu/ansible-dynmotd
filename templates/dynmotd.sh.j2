@@ -25,6 +25,6 @@ echo "
      Load: $(cat /proc/loadavg)
 {% for custom_command in dynmotd_custom %}
 {%set spacing = custom_command.name | length%}
-{%for i in range(8 - spacing)%} {% endfor %}{{ custom_command.name }}: $({{ custom_command.command }})
+{%for i in range(9 - spacing)%} {% endfor %}{{ custom_command.name }}: $({{ custom_command.command }})
 {% endfor %}
 =================================================="
