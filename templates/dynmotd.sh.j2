@@ -1,5 +1,5 @@
 #!/bin/bash
-data=$(hostname -f)
+data=$(hostname)
 icon="$(echo "$data" | /usr/bin/identicon)"
 color_fg=$((16#$(echo "$data" | tr -d '\n' | sha256sum | cut -c1-2)))
 color_bg=$(( color_fg + 15 ))
