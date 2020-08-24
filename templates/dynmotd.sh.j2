@@ -21,7 +21,7 @@ echo "
 ==================================================
  Hostname: $(hostname)
    Uptime: $(uptime -p)
-  Release: {{ ansible_distribution }} Linux release {{ ansible_distribution_version }} ({{ ansible_distribution_release }})
+  Release: `cat /etc/redhat-release`
      Load: $(cat /proc/loadavg)
 {% for custom_command in dynmotd_custom %}
 {%set spacing = custom_command.name | length%}
