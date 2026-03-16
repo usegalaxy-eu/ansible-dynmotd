@@ -3,6 +3,7 @@
 #   - name: Condor
 #     command: "condor_q -totals | tail -n 1"
 dynmotd_custom: []
+# dynmotd_extra_text: "some extra text to show"
 site_ascii_art_1: "  _____     _                _____ _____  "
 site_ascii_art_2: " |   __|___| |___ _ _ _ _   |   __|  |  | "
 site_ascii_art_3: " |  |  | .'| | .'|_'_| | |  |   __|  |  | "

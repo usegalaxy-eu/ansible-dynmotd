@@ -27,4 +27,8 @@ echo "
 {%set spacing = custom_command.name | length%}
 {%for i in range(9 - spacing)%} {% endfor %}{{ custom_command.name }}: $({{ custom_command.command }})
 {% endfor %}
+{% if dynmotd_extra_text is defined %}
+
+{{ dynmotd_extra_text }}
+{% endif %}
 =================================================="
